@@ -1,5 +1,6 @@
 
 from extensions.imports import *
+from . import constants as const
 
 class Booking(webdriver.Chrome):
 
