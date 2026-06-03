@@ -1,14 +1,5 @@
-import os
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from . import constants as const
-from selenium.webdriver.common.by import By  # ADD THIS
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from booking.booking_filtration import BookingFiltration
+
+from extensions.imports import *
 
 class Booking(webdriver.Chrome):
 

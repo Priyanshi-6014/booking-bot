@@ -2,11 +2,7 @@
 #That will be responsible to inetarct with our website
 #after we have some results, to apply filteration 
 
-from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By  # ADD THIS
-from selenium.webdriver.support import expected_conditions as EC
-
+from extensions.imports import *
 
 class BookingFiltration:
     def __init__(self, driver:WebDriver):
