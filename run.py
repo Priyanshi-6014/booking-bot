@@ -1,4 +1,4 @@
-from booking.booking import Booking
+from booking.booking import *
 
 with Booking() as bot:
     bot.land_first_page()
@@ -8,4 +8,5 @@ with Booking() as bot:
     bot.select_dates('2026-07-24', '2026-07-25')
     bot.select_guests()
     bot.click_search()
-    bot.booking_filt()
+    filtration = BookingFiltration(driver=bot)  # pass bot as driver
+    filtration.sort_by_lowest_price()

@@ -5,21 +5,18 @@
 from extensions.imports import *
 
 class BookingFiltration:
-    def __init__(self, driver:WebDriver):
+    def __init__(self, driver: WebDriver):
         self.driver = driver
 
     def sort_by_lowest_price(self):
-        self.find_element(By.CSS_SELECTOR, 
+        self.driver.find_element(By.CSS_SELECTOR, 
             'button[data-testid="sorters-dropdown-trigger"]'
         ).click()
         
         # wait for dropdown to open
-        WebDriverWait(self, 10).until(
+        WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'button[data-id="price"]'))
         )
         
-        # re-find the element right before clicking to avoid stale reference
-        self.find_element(By.CSS_SELECTOR, 'button[data-id="price"]').click()
-        
-
-    
+        # re-find to avoid stale reference
+        self.driver.find_element(By.CSS_SELECTOR, 'button[data-id="price"]').click()
